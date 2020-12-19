@@ -43,7 +43,7 @@ header nav {
   display: -ms-flexbox;
   display: flex;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   background-color: rgba(38, 60, 73, 0.9);
 }
 
@@ -72,14 +72,14 @@ header ul li a:hover {
   color: chocolate;
 }
 
-header ul li #afspraak {
+header ul li #appointment {
   padding: 15px 30px;
   background-color: saddlebrown;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }
 
-header ul li #afspraak:hover {
+header ul li #appointment:hover {
   background-color: chocolate;
   color: black;
 }
@@ -105,61 +105,71 @@ header #logo {
   color: white;
   text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
   letter-spacing: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.intro h1 {
-  -webkit-animation: fade-names 1s forwards;
-          animation: fade-names 1s forwards;
-  padding-top: 260px;
-  font-size: 100px;
+.intro .company-name {
+  padding: 0 20px;
+  margin: auto;
+  border: 5px solid #fff;
+  -webkit-animation: fade-names 1s linear forwards;
+          animation: fade-names 1s linear forwards;
   -webkit-animation-delay: 0.5s;
           animation-delay: 0.5s;
 }
 
+.intro h1 {
+  font-size: 150px;
+}
+
 .intro h2 {
-  padding-top: 70px;
-  -webkit-animation: fade-names 1s forwards;
-          animation: fade-names 1s forwards;
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s;
+  margin-top: -20px;
+  padding-bottom: 20px;
+  font-size: 50px;
 }
 
 .intro h1,
 .intro h2 {
   font-family: "Economica", sans-serif;
   font-weight: 100;
-  opacity: 0;
 }
 
 @-webkit-keyframes fade-names {
   from {
     opacity: 0;
-    -webkit-transform: scale(1.5);
-            transform: scale(1.5);
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
   }
   to {
     opacity: 1;
-    -webkit-transform: scale(1.6);
-            transform: scale(1.6);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
 @keyframes fade-names {
   from {
     opacity: 0;
-    -webkit-transform: scale(1.5);
-            transform: scale(1.5);
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
   }
   to {
     opacity: 1;
-    -webkit-transform: scale(1.6);
-            transform: scale(1.6);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
 /*markup content*/
-.content {
-  margin: 50px 300px;
+.content > div {
+  margin: 0 300px;
+  padding: 80px 0;
 }
 
 .content h2 {
@@ -180,8 +190,8 @@ header #logo {
   margin: 20px 0;
 }
 
-/*afspraak maken*/
-#afspraak-maken .shops {
+/*make appointment*/
+.make-appointment .shops {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -190,24 +200,24 @@ header #logo {
           justify-content: space-between;
 }
 
-#afspraak-maken .emmen-btn::after {
+.make-appointment .emmen-btn::after {
   background-image: url(/images/emmen-front.jpg);
 }
 
-#afspraak-maken .zwolle-btn:after {
+.make-appointment .zwolle-btn:after {
   background-image: url(/images/Stellar-Bakkes-13.jpg);
 }
 
-#afspraak-maken .emmen-btn,
-#afspraak-maken .zwolle-btn {
-  width: 450px;
+.make-appointment .emmen-btn,
+.make-appointment .zwolle-btn {
   height: 310px;
+  width: 450px;
   background: #000;
   position: relative;
 }
 
-#afspraak-maken .emmen-btn h3,
-#afspraak-maken .zwolle-btn h3 {
+.make-appointment .emmen-btn h3,
+.make-appointment .zwolle-btn h3 {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -220,13 +230,13 @@ header #logo {
   font-weight: 200;
 }
 
-#afspraak-maken .emmen-btn h3:hover,
-#afspraak-maken .zwolle-btn h3:hover {
+.make-appointment .emmen-btn h3:hover,
+.make-appointment .zwolle-btn h3:hover {
   text-decoration: underline;
 }
 
-#afspraak-maken .emmen-btn::after,
-#afspraak-maken .zwolle-btn::after {
+.make-appointment .emmen-btn::after,
+.make-appointment .zwolle-btn::after {
   position: absolute;
   top: 0;
   left: 0;
@@ -240,14 +250,14 @@ header #logo {
   transition: all 0.2s;
 }
 
-#afspraak-maken .emmen-btn:hover h3,
-#afspraak-maken .zwolle-btn:hover h3 {
+.make-appointment .emmen-btn:hover h3,
+.make-appointment .zwolle-btn:hover h3 {
   color: #fff;
   background-color: saddlebrown;
 }
 
-#afspraak-maken .emmen-btn:hover::after,
-#afspraak-maken .zwolle-btn:hover::after {
+.make-appointment .emmen-btn:hover::after,
+.make-appointment .zwolle-btn:hover::after {
   opacity: 0.2;
 }
 /*# sourceMappingURL=style.css.map */

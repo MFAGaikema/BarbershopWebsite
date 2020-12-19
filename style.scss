@@ -39,9 +39,8 @@ header {
 		width: 100vw;
 		display: flex;
 		position: fixed;
-		z-index: 1;
+		z-index: 2;
 		background-color: rgba($color: #263c49, $alpha: 0.9);
-		// letter-spacing: 2px;
 	}
 
 	ul {
@@ -63,13 +62,13 @@ header {
 				color: chocolate;
 			}
 
-			#afspraak {
+			#appointment {
 				padding: 15px 30px;
 				background-color: saddlebrown;
 				transition: all 0.2s;
 			}
 
-			#afspraak:hover {
+			#appointment:hover {
 				background-color: chocolate;
 				color: black;
 			}
@@ -98,42 +97,53 @@ header {
 	text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black,
 		1px -1px 0 black, -1px 1px 0 black;
 	letter-spacing: 4px;
+	display: flex;
+	flex-direction: column;
 
-	h1 {
-		animation: fade-names 1s forwards;
-		padding-top: 260px;
-		font-size: 100px;
+	.company-name {
+		padding: 0 20px;
+		margin: auto;
+		border: 5px solid #fff;
+		animation: fade-names 1s linear forwards;
 		animation-delay: 0.5s;
 	}
 
+	h1 {
+		font-size: 150px;	
+	}
+
 	h2 {
-		padding-top: 70px;
-		animation: fade-names 1s forwards;
-		animation-delay: 1s;
+		margin-top: -20px;
+		padding-bottom: 20px;
+		font-size: 50px;
+
 	}
 
 	h1,
 	h2 {
 		font-family: "Economica", sans-serif;
 		font-weight: 100;
-		opacity: 0;
 	}
 
 	@keyframes fade-names {
 		from {
 			opacity: 0;
-			transform: scale(1.5);
+			transform: scale(0.95);
 		}
 		to {
 			opacity: 1;
-			transform: scale(1.6);
+			transform: scale(1);
 		}
 	}
 }
 
 /*markup content*/
 .content {
-	margin: 50px 300px;
+
+	&> div {
+		margin: 0 300px;
+		padding: 80px 0;
+	}
 
 	h2 {
 		color: #444;
@@ -154,8 +164,9 @@ header {
 	}
 }
 
-/*afspraak maken*/
-#afspraak-maken {
+/*make appointment*/
+.make-appointment {
+	
 	.shops {
 		display: flex;
 		justify-content: space-between;
@@ -175,8 +186,9 @@ header {
 
 	.emmen-btn,
 	.zwolle-btn {
-		width: 450px;
+		
 		height: 310px;
+		width: 450px;
 		background: #000;
 		position: relative;
 
