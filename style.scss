@@ -89,7 +89,7 @@ header {
 
 /*intro*/
 .intro {
-	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/images/3day-shave-course.jpg);
+	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/BarbershopWebsite/images/3day-shave-course-new.jpg);
 	background-size: cover;
 	height: 800px;
 	text-align: center;
@@ -189,13 +189,13 @@ header {
 	
 		.emmen-btn {
 			&::after {
-				background-image: url(/images/emmen-front.jpg);
+				background-image: url(/BarbershopWebsite/images/emmen-front.jpg);
 			}
 		}
 	
 		.zwolle-btn {
 			&:after {
-				background-image: url(/images/Stellar-Bakkes-13.jpg);
+				background-image: url(/BarbershopWebsite/images/Stellar-Bakkes-13.jpg);
 			}
 		}
 	
@@ -265,21 +265,21 @@ header {
 	div {
 		background-size: cover;
 	}
-	
-	#salon {
-		grid-area: salon;
-		background-image: url(/images/emmen-salon.jpg);
-	}
+}
 
-	#materials {
-		grid-area: materials;
-		background-image: url(/images/materials-bakkes.jpg);
-	}
+#salon {
+	grid-area: salon;
+	background-image: url(/BarbershopWebsite/images/emmen-salon.jpg);
+}
 
-	#blowdry {
-		grid-area: blowdry;
-		background-image: url(/images/andre-emmen.jpg);
-	}
+#materials {
+	grid-area: materials;
+	background-image: url(/BarbershopWebsite/images/materials-bakkes.jpg);
+}
+
+#blowdry {
+	grid-area: blowdry;
+	background-image: url(/BarbershopWebsite/images/andre-emmen.jpg);
 }
 
 .text-container {
