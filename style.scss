@@ -89,7 +89,7 @@ header {
 
 /*intro*/
 .intro {
-	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./images/3day-shave-course.jpg);
+	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/images/3day-shave-course.jpg);
 	background-size: cover;
 	height: 800px;
 	text-align: center;
@@ -174,37 +174,38 @@ header {
 			margin: 5px 0;
 		}
 
-		.emmen-container, .zwolle-container {
+		.emmen-container,
+		.zwolle-container {
 			width: 450px;
 		}
-	
+
 		.store-hours {
 			padding-top: 10px;
 		}
-	
+
 		.hours {
 			display: flex;
 			justify-content: space-between;
 		}
-	
+
 		.emmen-btn {
 			&::after {
 				background-image: url(/images/emmen-front.jpg);
 			}
 		}
-	
+
 		.zwolle-btn {
 			&:after {
 				background-image: url(/images/Stellar-Bakkes-13.jpg);
 			}
 		}
-	
+
 		.emmen-btn,
 		.zwolle-btn {
 			height: 310px;
 			background: #000;
 			position: relative;
-	
+
 			h3 {
 				position: absolute;
 				top: 50%;
@@ -216,11 +217,11 @@ header {
 				background-color: chocolate;
 				font-weight: 200;
 			}
-	
+
 			h3:hover {
 				text-decoration: underline;
 			}
-	
+
 			&::after {
 				position: absolute;
 				top: 0;
@@ -234,14 +235,14 @@ header {
 				transition: all 0.2s;
 			}
 		}
-	
+
 		.emmen-btn:hover,
 		.zwolle-btn:hover {
 			h3 {
 				color: #fff;
 				background-color: saddlebrown;
 			}
-	
+
 			&::after {
 				opacity: 0.2;
 			}
@@ -258,9 +259,9 @@ header {
 	gap: 40px;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-template-rows: 1fr 1fr;
-	grid-template-areas: 
-									"salon salon materials"
-									"salon salon blowdry";
+	grid-template-areas:
+		"salon salon materials"
+		"salon salon blowdry";
 
 	div {
 		background-size: cover;

@@ -97,8 +97,8 @@ header #logo {
 
 /*intro*/
 .intro {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url(./images/3day-shave-course.jpg);
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./images/3day-shave-course.jpg);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url(/images/3day-shave-course.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/images/3day-shave-course.jpg);
   background-size: cover;
   height: 800px;
   text-align: center;
@@ -208,7 +208,8 @@ header #logo {
   margin: 5px 0;
 }
 
-.make-appointment .shops .emmen-container, .make-appointment .shops .zwolle-container {
+.make-appointment .shops .emmen-container,
+.make-appointment .shops .zwolle-container {
   width: 450px;
 }
 
