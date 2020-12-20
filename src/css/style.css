@@ -97,8 +97,8 @@ header #logo {
 
 /*intro*/
 .intro {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url(/images/3day-shave-course.jpg);
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/images/3day-shave-course.jpg);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url(../../images/3day-shave-course.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../images/3day-shave-course.jpg);
   background-size: cover;
   height: 800px;
   text-align: center;
@@ -227,11 +227,11 @@ header #logo {
 }
 
 .make-appointment .shops .emmen-btn::after {
-  background-image: url(/images/emmen-front.jpg);
+  background-image: url(../../images/emmen-front.jpg);
 }
 
 .make-appointment .shops .zwolle-btn:after {
-  background-image: url(/images/Stellar-Bakkes-13.jpg);
+  background-image: url(../../images/Stellar-Bakkes-13.jpg);
 }
 
 .make-appointment .shops .emmen-btn,
@@ -310,21 +310,21 @@ header #logo {
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: salon;
-  background-image: url(/images/emmen-salon.jpg);
+  background-image: url(../../images/emmen-salon.jpg);
 }
 
 #materials {
   -ms-grid-row: 1;
   -ms-grid-column: 3;
   grid-area: materials;
-  background-image: url(/images/materials-bakkes.jpg);
+  background-image: url(../../images/materials-bakkes.jpg);
 }
 
 #blowdry {
   -ms-grid-row: 2;
   -ms-grid-column: 3;
   grid-area: blowdry;
-  background-image: url(/images/andre-emmen.jpg);
+  background-image: url(../../images/andre-emmen.jpg);
 }
 
 .text-container p:first-of-type {
