@@ -265,21 +265,21 @@ header {
 	div {
 		background-size: cover;
 	}
-	
-	#salon {
-		grid-area: salon;
-		background-image: url(/images/emmen-salon.jpg);
-	}
+}
 
-	#materials {
-		grid-area: materials;
-		background-image: url(/images/materials-bakkes.jpg);
-	}
+#salon {
+	grid-area: salon;
+	background-image: url(/images/emmen-salon.jpg);
+}
 
-	#blowdry {
-		grid-area: blowdry;
-		background-image: url(/images/andre-emmen.jpg);
-	}
+#materials {
+	grid-area: materials;
+	background-image: url(/images/materials-bakkes.jpg);
+}
+
+#blowdry {
+	grid-area: blowdry;
+	background-image: url(/images/andre-emmen.jpg);
 }
 
 .text-container {
