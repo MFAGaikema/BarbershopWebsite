@@ -89,7 +89,7 @@ header {
 
 /*intro*/
 .intro {
-	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/3day-shave-course.jpg");
+	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/images/3day-shave-course.jpg);
 	background-size: cover;
 	height: 800px;
 	text-align: center;
@@ -189,13 +189,13 @@ header {
 	
 		.emmen-btn {
 			&::after {
-				background-image: url("/images/emmen-front.jpg");
+				background-image: url(/images/emmen-front.jpg);
 			}
 		}
 	
 		.zwolle-btn {
 			&:after {
-				background-image: url("/images/Stellar-Bakkes-13.jpg");
+				background-image: url(/images/Stellar-Bakkes-13.jpg);
 			}
 		}
 	
