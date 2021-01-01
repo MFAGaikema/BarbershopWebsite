@@ -1,0 +1,357 @@
+/*variables*/
+$width-content-xs: 100vw;
+$width-content-sm: 70vw;
+$width-content-md: 90vw;
+
+/*functions*/
+@function height($width) {
+  @return $width / 1.6;
+}
+
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Manrope', sans-serif;
+}
+
+html,
+body {
+	overflow-x: hidden;
+}
+
+// html {
+//   scroll-behavior: smooth;
+// }
+
+/*scrollbar*/
+/* width */
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #999;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}
+
+/*Navigatiemenu top*/
+
+.navbar {
+	background-color: rgba($color: #000, $alpha: 0.9);
+
+	.navbar-nav {
+		a {
+			color: white;
+		}
+	}
+
+	#logo {
+		font-size: 50px;
+		padding: 0px 15px;
+		border: 2px solid #fff;
+		font-family: 'Economica', sans-serif;
+		color: white;
+	}
+}
+
+/*main*/
+main {
+	.bg-navbar {
+		height: 80px;
+		background-color: black;
+	}
+}
+
+/*intro*/
+.intro {
+	background: linear-gradient(rgba($color: #192730, $alpha: 0.9), rgba($color: #263c49, $alpha: 0.8)),
+		url(../../images/3day-shave-course.jpg);
+	background-size: cover;
+	background-position: center;
+	height: 90vh;
+	text-align: center;
+	color: white;
+	text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black,
+		1px -1px 0 black, -1px 1px 0 black;
+	letter-spacing: 4px;
+
+	.company-name {
+		top: 45%;
+		// animation: fade-names 1s linear forwards;
+		// animation-delay: 0.5s;
+	}
+
+	h1 {
+		font-size: 100px;
+	}
+
+	h2 {
+		margin-top: -20px;
+		font-size: 30px;
+	}
+
+	h1,
+	h2 {
+		font-family: 'Economica', sans-serif;
+		font-weight: 100;
+	}
+
+	@keyframes fade-names {
+		from {
+			opacity: 0;
+			transform: scale(0.95);
+		}
+		to {
+			opacity: 1;
+			transform: scale(1);
+		}
+	}
+}
+
+/*markup content*/
+.content {
+	margin: auto;
+	width: $width-content-xs;
+
+	& > section {
+		padding: 80px 0 10px 0;
+		min-height: 100vh;
+
+		& > p {
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+	}
+
+	h2 {
+		color: #222;
+		text-transform: uppercase;
+		position: relative;
+		margin-bottom: 20px;
+		text-align: left;
+
+		// &::after {
+		// 	content: "";
+		// 	width: 100%;
+		// 	position: absolute;
+		// 	left: 0;
+		// 	bottom: -4px;
+
+		// }
+	}
+
+	h2,
+	p {
+		margin: 0 5px;
+	}
+}
+
+/*make appointment*/
+.make-appointment {
+	.shop-container {
+		width: 100%;
+		margin-bottom: 15px;
+	}
+
+	.store-hours {
+		padding-top: 5px;
+
+		p {
+			margin: 0 5px;
+		}
+	}
+
+	.hours {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.emmen-btn {
+		background: linear-gradient(rgba($color: grey, $alpha: 0.2), rgba($color: grey, $alpha: 0.4)),
+			url(../../images/emmen-front.jpg);
+
+		&:hover {
+			background: linear-gradient(rgba($color: #192730, $alpha: 0.9), rgba($color: #263c49, $alpha: 0.8)),
+				url(../../images/emmen-front.jpg);
+			background-position: center;
+		}
+	}
+
+	.zwolle-btn {
+		background: linear-gradient(rgba($color: grey, $alpha: 0.2), rgba($color: grey, $alpha: 0.4)),
+			url(../../images/Stellar-Bakkes-13.jpg);
+
+		&:hover {
+			background: linear-gradient(rgba($color: #192730, $alpha: 0.9), rgba($color: #263c49, $alpha: 0.8)),
+				url(../../images/Stellar-Bakkes-13.jpg);
+			background-position: right;
+		}
+	}
+
+	.emmen-btn,
+	.zwolle-btn {
+		height: height($width-content-xs);
+		position: relative;
+		background-size: cover;
+		background-repeat: no-repeat;
+		// background-position: center;
+
+		&:hover {
+			// background-size: cover;
+			background-repeat: no-repeat;
+		}
+
+		a {
+			position: absolute;
+			bottom: 50%;
+			transform: translateY(50%);
+			text-align: center;
+			z-index: 1;
+			color: #fff;
+			width: 100%;
+			padding: 10px 0;
+			background-color: rgb(46, 61, 83);
+			font-weight: 200;
+			text-decoration: none;
+		}
+
+		h4 {
+			font-size: 18px;
+			margin: 0;
+		}
+
+		h4:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+/*about*/
+
+.img-container {
+	display: grid;
+	width: 100%;
+	height: 450px;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	grid-template-areas:
+		'salon salon materials'
+		'salon salon blowdry';
+
+	div {
+		background-size: cover;
+	}
+}
+
+#salon {
+	grid-area: salon;
+	background-image: url(../../images/emmen-salon.jpg);
+}
+
+#materials {
+	grid-area: materials;
+	background-image: url(../../images/materials-bakkes.jpg);
+}
+
+#blowdry {
+	grid-area: blowdry;
+	background-image: url(../../images/andre-emmen.jpg);
+}
+
+//sm size
+@media only screen and (min-width: 576px) {
+	.intro {
+		h1 {
+			font-size: 150px;
+		}
+		h2 {
+			font-size: 50px;
+		}
+	}
+
+
+
+	.content {
+		width: $width-content-sm;
+
+		.emmen-btn,
+		.zwolle-btn {
+			height: height($width-content-sm);
+		}
+	}
+}
+
+//md size
+@media only screen and (min-width: 768px) {
+
+	.navbar {
+		background-color: rgba($color: #000, $alpha: 0.9);
+		padding: 0;
+
+		#navbarSupportedContent {
+			height: 74px;
+
+			ul {
+				height: 74px;
+			}
+		}
+
+		#logo {
+			margin: 10px 0;
+			transition: all 0.2s;
+		}
+
+		.nav-link {
+			height: 100%;
+			display: flex;
+			align-items: center;
+		}
+
+		.active {
+			background-color: #263c49;
+		}
+	}
+
+	.content {
+		width: $width-content-md;
+
+		h2,
+		p {
+			margin: 0;
+		}
+
+		.shop-container {
+			width: 49.5%;
+		}
+
+		.emmen-btn,
+		.zwolle-btn {
+			height: height($width-content-md / 2);
+		}
+	}
+}
+
+
+
+//lg size
+@media only screen and (min-width: 992px) {
+}
+
+//xl size
+@media only screen and (min-width: 1200px) {
+	.content {
+		margin: 0 300px;
+	}
+}
