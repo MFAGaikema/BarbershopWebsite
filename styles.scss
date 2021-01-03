@@ -2,6 +2,7 @@
 $width-content-xs: 100vw;
 $width-content-sm: 70vw;
 $width-content-md: 90vw;
+$width-content-lg: 70vw;
 
 /*functions*/
 @function height($width) {
@@ -20,10 +21,6 @@ html,
 body {
 	overflow-x: hidden;
 }
-
-// html {
-//   scroll-behavior: smooth;
-// }
 
 /*scrollbar*/
 /* width */
@@ -76,7 +73,7 @@ main {
 
 /*intro*/
 .intro {
-	background: linear-gradient(rgba($color: #192730, $alpha: 0.9), rgba($color: #263c49, $alpha: 0.8)),
+	background: linear-gradient(rgba($color: #192730, $alpha: 0.7), rgba($color: #263c49, $alpha: 0.9)),
 		url(../../images/3day-shave-course.jpg);
 	background-size: cover;
 	background-position: center;
@@ -86,11 +83,14 @@ main {
 	text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black,
 		1px -1px 0 black, -1px 1px 0 black;
 	letter-spacing: 4px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
 	.company-name {
-		top: 45%;
-		// animation: fade-names 1s linear forwards;
-		// animation-delay: 0.5s;
+		animation: fade-names 1s linear forwards;
+		animation-delay: 0.5s;
+		opacity: 0;
 	}
 
 	h1 {
@@ -154,7 +154,7 @@ main {
 
 	h2,
 	p {
-		margin: 0 5px;
+		margin: 0 15px;
 	}
 }
 
@@ -163,78 +163,49 @@ main {
 	.shop-container {
 		width: 100%;
 		margin-bottom: 15px;
+
+		[class*="container"] {
+			height: height($width-content-xs);
+			position: relative;
+			background-size: cover;
+			background-repeat: no-repeat;
+			// background-position: center;
+	
+			a {
+				position: absolute;
+				bottom: 50%;
+				transform: translateY(50%);
+				text-align: center;
+				z-index: 1;
+				color: #fff;
+				width: 100%;
+				padding: 10px 0;
+				background-color: rgb(46, 61, 83);
+				font-weight: 200;
+				text-decoration: none;
+			}
+		}
 	}
 
 	.store-hours {
-		padding-top: 5px;
-
-		p {
-			margin: 0 5px;
-		}
+		padding-top: 15px;
+		padding-bottom: 30px;
 	}
 
 	.hours {
 		display: flex;
 		justify-content: space-between;
+		font-size: 10px;
 	}
 
-	.emmen-btn {
+	.emmen-bg-container {
 		background: linear-gradient(rgba($color: grey, $alpha: 0.2), rgba($color: grey, $alpha: 0.4)),
-			url(../../images/emmen-front.jpg);
-
-		&:hover {
-			background: linear-gradient(rgba($color: #192730, $alpha: 0.9), rgba($color: #263c49, $alpha: 0.8)),
-				url(../../images/emmen-front.jpg);
-			background-position: center;
-		}
+			url(../../images/emmen-front-grey.jpg);
 	}
 
-	.zwolle-btn {
+	.zwolle-bg-container {
 		background: linear-gradient(rgba($color: grey, $alpha: 0.2), rgba($color: grey, $alpha: 0.4)),
-			url(../../images/Stellar-Bakkes-13.jpg);
-
-		&:hover {
-			background: linear-gradient(rgba($color: #192730, $alpha: 0.9), rgba($color: #263c49, $alpha: 0.8)),
-				url(../../images/Stellar-Bakkes-13.jpg);
-			background-position: right;
-		}
-	}
-
-	.emmen-btn,
-	.zwolle-btn {
-		height: height($width-content-xs);
-		position: relative;
-		background-size: cover;
-		background-repeat: no-repeat;
-		// background-position: center;
-
-		&:hover {
-			// background-size: cover;
-			background-repeat: no-repeat;
-		}
-
-		a {
-			position: absolute;
-			bottom: 50%;
-			transform: translateY(50%);
-			text-align: center;
-			z-index: 1;
-			color: #fff;
-			width: 100%;
-			padding: 10px 0;
-			background-color: rgb(46, 61, 83);
-			font-weight: 200;
-			text-decoration: none;
-		}
-
-		h4 {
-			font-size: 18px;
-			margin: 0;
-		}
-
-		h4:hover {
-			text-decoration: underline;
-		}
+			url(../../images/Stellar-Bakkes-13-grey.jpg);
 	}
 }
 
@@ -270,6 +241,35 @@ main {
 	background-image: url(../../images/andre-emmen.jpg);
 }
 
+@media (hover: hover) {
+	.shop-container {
+		[class*="container"] {
+			&:hover {
+				background-size: cover;
+				background-repeat: no-repeat;
+			}
+
+			a:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	.emmen-bg-container {
+		&:hover {
+			background: linear-gradient(rgba($color: #192730, $alpha: 0.9), rgba($color: #263c49, $alpha: 0.8)),
+				url(../../images/emmen-front.jpg);
+		}
+	}
+
+	.zwolle-bg-container {
+		&:hover {
+			background: linear-gradient(rgba($color: #192730, $alpha: 0.9), rgba($color: #263c49, $alpha: 0.8)),
+				url(../../images/Stellar-Bakkes-13.jpg);
+		}
+	}
+}
+
 //sm size
 @media only screen and (min-width: 576px) {
 	.intro {
@@ -281,14 +281,18 @@ main {
 		}
 	}
 
-
-
 	.content {
 		width: $width-content-sm;
 
-		.emmen-btn,
-		.zwolle-btn {
-			height: height($width-content-sm);
+		h2, p {
+			margin: 0;
+		}
+
+		.shop-container {
+
+			[class*="container"] {
+				height: height($width-content-sm);
+			}
 		}
 	}
 }
@@ -333,13 +337,14 @@ main {
 		}
 
 		.shop-container {
-			width: 49.5%;
+			width: 49%;
+
+			[class*="container"] {
+				height: height($width-content-md / 2);
+			}
 		}
 
-		.emmen-btn,
-		.zwolle-btn {
-			height: height($width-content-md / 2);
-		}
+
 	}
 }
 
@@ -347,11 +352,20 @@ main {
 
 //lg size
 @media only screen and (min-width: 992px) {
+	.content {
+		width: $width-content-lg;
+
+		.shop-container {
+			width: 49%;
+
+			[class*="container"] {
+				height: height($width-content-lg / 2);
+			}
+		}
+	}
 }
 
 //xl size
 @media only screen and (min-width: 1200px) {
-	.content {
-		margin: 0 300px;
-	}
+
 }

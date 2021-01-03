@@ -55,8 +55,8 @@ const shopInfo = shopsBakkes
 		const { hours } = shop;
 		return `
 	<div class="shop-container">
-		<div class="${place.toLowerCase()}-btn">
-			<a href="#"><h4>Afspraak ${place} maken</h4></a>
+		<div class="${place.toLowerCase()}-bg-container">
+			<a href="#">Afspraak ${place} maken</a>
 		</div>
 		<div class="store-hours">${storeHours(hours)}</div>
 	</div>
@@ -67,3 +67,18 @@ const shopInfo = shopsBakkes
 const shops = document.querySelector(".shops");
 
 shops.innerHTML = shopInfo;
+
+//change font-size based on width container
+const shopContainer = document.querySelector(".shop-container");
+const mainContainer = document.querySelector(".shops");
+const linkBtn = Array.from(mainContainer.getElementsByTagName("a"));
+const hours = Array.from(document.querySelectorAll(".hours"));
+console.log(hours);
+
+const changeFontSize = () => {
+ linkBtn.forEach(btn => btn.style.fontSize = `${shopContainer.offsetWidth / 25}px`);
+ hours.forEach(hour => hour.style.fontSize = `${shopContainer.offsetWidth / 25}px`);
+}
+changeFontSize()
+
+new ResizeObserver(changeFontSize).observe(shopContainer)

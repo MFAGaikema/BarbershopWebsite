@@ -59,8 +59,8 @@ main .bg-navbar {
 
 /*intro*/
 .intro {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(25, 39, 48, 0.9)), to(rgba(38, 60, 73, 0.8))), url(../../images/3day-shave-course.jpg);
-  background: linear-gradient(rgba(25, 39, 48, 0.9), rgba(38, 60, 73, 0.8)), url(../../images/3day-shave-course.jpg);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(25, 39, 48, 0.7)), to(rgba(38, 60, 73, 0.9))), url(../../images/3day-shave-course.jpg);
+  background: linear-gradient(rgba(25, 39, 48, 0.7), rgba(38, 60, 73, 0.9)), url(../../images/3day-shave-course.jpg);
   background-size: cover;
   background-position: center;
   height: 90vh;
@@ -68,10 +68,23 @@ main .bg-navbar {
   color: white;
   text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
   letter-spacing: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .intro .company-name {
-  top: 45%;
+  -webkit-animation: fade-names 1s linear forwards;
+          animation: fade-names 1s linear forwards;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  opacity: 0;
 }
 
 .intro h1 {
@@ -141,7 +154,7 @@ main .bg-navbar {
 
 .content h2,
 .content p {
-  margin: 0 5px;
+  margin: 0 15px;
 }
 
 /*make appointment*/
@@ -150,60 +163,14 @@ main .bg-navbar {
   margin-bottom: 15px;
 }
 
-.make-appointment .store-hours {
-  padding-top: 5px;
-}
-
-.make-appointment .store-hours p {
-  margin: 0 5px;
-}
-
-.make-appointment .hours {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.make-appointment .emmen-btn {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(128, 128, 128, 0.2)), to(rgba(128, 128, 128, 0.4))), url(../../images/emmen-front.jpg);
-  background: linear-gradient(rgba(128, 128, 128, 0.2), rgba(128, 128, 128, 0.4)), url(../../images/emmen-front.jpg);
-}
-
-.make-appointment .emmen-btn:hover {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(25, 39, 48, 0.9)), to(rgba(38, 60, 73, 0.8))), url(../../images/emmen-front.jpg);
-  background: linear-gradient(rgba(25, 39, 48, 0.9), rgba(38, 60, 73, 0.8)), url(../../images/emmen-front.jpg);
-  background-position: center;
-}
-
-.make-appointment .zwolle-btn {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(128, 128, 128, 0.2)), to(rgba(128, 128, 128, 0.4))), url(../../images/Stellar-Bakkes-13.jpg);
-  background: linear-gradient(rgba(128, 128, 128, 0.2), rgba(128, 128, 128, 0.4)), url(../../images/Stellar-Bakkes-13.jpg);
-}
-
-.make-appointment .zwolle-btn:hover {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(25, 39, 48, 0.9)), to(rgba(38, 60, 73, 0.8))), url(../../images/Stellar-Bakkes-13.jpg);
-  background: linear-gradient(rgba(25, 39, 48, 0.9), rgba(38, 60, 73, 0.8)), url(../../images/Stellar-Bakkes-13.jpg);
-  background-position: right;
-}
-
-.make-appointment .emmen-btn,
-.make-appointment .zwolle-btn {
+.make-appointment .shop-container [class*="container"] {
   height: 62.5vw;
   position: relative;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-.make-appointment .emmen-btn:hover,
-.make-appointment .zwolle-btn:hover {
-  background-repeat: no-repeat;
-}
-
-.make-appointment .emmen-btn a,
-.make-appointment .zwolle-btn a {
+.make-appointment .shop-container [class*="container"] a {
   position: absolute;
   bottom: 50%;
   -webkit-transform: translateY(50%);
@@ -218,15 +185,29 @@ main .bg-navbar {
   text-decoration: none;
 }
 
-.make-appointment .emmen-btn h4,
-.make-appointment .zwolle-btn h4 {
-  font-size: 18px;
-  margin: 0;
+.make-appointment .store-hours {
+  padding-top: 15px;
+  padding-bottom: 30px;
 }
 
-.make-appointment .emmen-btn h4:hover,
-.make-appointment .zwolle-btn h4:hover {
-  text-decoration: underline;
+.make-appointment .hours {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 10px;
+}
+
+.make-appointment .emmen-bg-container {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(128, 128, 128, 0.2)), to(rgba(128, 128, 128, 0.4))), url(../../images/emmen-front-grey.jpg);
+  background: linear-gradient(rgba(128, 128, 128, 0.2), rgba(128, 128, 128, 0.4)), url(../../images/emmen-front-grey.jpg);
+}
+
+.make-appointment .zwolle-bg-container {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(128, 128, 128, 0.2)), to(rgba(128, 128, 128, 0.4))), url(../../images/Stellar-Bakkes-13-grey.jpg);
+  background: linear-gradient(rgba(128, 128, 128, 0.2), rgba(128, 128, 128, 0.4)), url(../../images/Stellar-Bakkes-13-grey.jpg);
 }
 
 /*about*/
@@ -269,6 +250,24 @@ main .bg-navbar {
   background-image: url(../../images/andre-emmen.jpg);
 }
 
+@media (hover: hover) {
+  .shop-container [class*="container"]:hover {
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .shop-container [class*="container"] a:hover {
+    text-decoration: underline;
+  }
+  .emmen-bg-container:hover {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(25, 39, 48, 0.9)), to(rgba(38, 60, 73, 0.8))), url(../../images/emmen-front.jpg);
+    background: linear-gradient(rgba(25, 39, 48, 0.9), rgba(38, 60, 73, 0.8)), url(../../images/emmen-front.jpg);
+  }
+  .zwolle-bg-container:hover {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(25, 39, 48, 0.9)), to(rgba(38, 60, 73, 0.8))), url(../../images/Stellar-Bakkes-13.jpg);
+    background: linear-gradient(rgba(25, 39, 48, 0.9), rgba(38, 60, 73, 0.8)), url(../../images/Stellar-Bakkes-13.jpg);
+  }
+}
+
 @media only screen and (min-width: 576px) {
   .intro h1 {
     font-size: 150px;
@@ -279,8 +278,10 @@ main .bg-navbar {
   .content {
     width: 70vw;
   }
-  .content .emmen-btn,
-  .content .zwolle-btn {
+  .content h2, .content p {
+    margin: 0;
+  }
+  .content .shop-container [class*="container"] {
     height: 43.75vw;
   }
 }
@@ -321,17 +322,22 @@ main .bg-navbar {
     margin: 0;
   }
   .content .shop-container {
-    width: 49.5%;
+    width: 49%;
   }
-  .content .emmen-btn,
-  .content .zwolle-btn {
+  .content .shop-container [class*="container"] {
     height: 28.125vw;
   }
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 992px) {
   .content {
-    margin: 0 300px;
+    width: 70vw;
+  }
+  .content .shop-container {
+    width: 49%;
+  }
+  .content .shop-container [class*="container"] {
+    height: 21.875vw;
   }
 }
 /*# sourceMappingURL=styles.css.map */
