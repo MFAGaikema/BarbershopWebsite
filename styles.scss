@@ -1,8 +1,6 @@
 /*variables*/
 $width-content-xs: 100vw;
-$width-content-sm: 70vw;
-$width-content-md: 90vw;
-$width-content-lg: 70vw;
+$width-content-sm-and-up: 70vw;
 
 /*functions*/
 @function height($width) {
@@ -47,6 +45,12 @@ body {
 
 .navbar {
 	background-color: rgba($color: #000, $alpha: 0.9);
+
+	.navbar-toggler {
+		&:focus {
+			box-shadow: none;
+		}
+	}
 
 	.navbar-nav {
 		a {
@@ -126,12 +130,13 @@ main {
 	width: $width-content-xs;
 
 	& > section {
-		padding: 80px 0 10px 0;
+		padding: 100px 0 10px 0;
 		min-height: 100vh;
 
 		& > p {
 			margin-top: 20px;
 			margin-bottom: 20px;
+			font-size: 14px;
 		}
 	}
 
@@ -141,19 +146,15 @@ main {
 		position: relative;
 		margin-bottom: 20px;
 		text-align: left;
+	}
 
-		// &::after {
-		// 	content: "";
-		// 	width: 100%;
-		// 	position: absolute;
-		// 	left: 0;
-		// 	bottom: -4px;
-
-		// }
+	h3 {
+		font-size: 18px;
 	}
 
 	h2,
-	p {
+	p,
+	.treatments-container {
 		margin: 0 15px;
 	}
 }
@@ -162,14 +163,13 @@ main {
 .make-appointment {
 	.shop-container {
 		width: 100%;
-		margin-bottom: 15px;
+		margin-bottom: 50px;
 
 		[class*="container"] {
 			height: height($width-content-xs);
 			position: relative;
 			background-size: cover;
 			background-repeat: no-repeat;
-			// background-position: center;
 	
 			a {
 				position: absolute;
@@ -189,7 +189,6 @@ main {
 
 	.store-hours {
 		padding-top: 15px;
-		padding-bottom: 30px;
 	}
 
 	.hours {
@@ -211,35 +210,60 @@ main {
 
 /*about*/
 
-.img-container {
-	display: grid;
-	width: 100%;
-	height: 450px;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-template-rows: 1fr 1fr;
-	grid-template-areas:
-		'salon salon materials'
-		'salon salon blowdry';
 
-	div {
-		background-size: cover;
+/*treatments*/
+.treatments {
+
+	.treatments-container {
+		margin-top: 50px;
+
+		.category-container {
+			margin-bottom: 30px;
+
+			.container {
+				padding: 0;
+			}
+		}
+
+		.treatment-list {
+			padding: 0;
+	
+			.treatment-card {
+				list-style-type: none;
+				display: flex;
+				justify-content: space-between;
+				// align-items: center;
+				margin: 5px 0;
+	
+				img {
+					width: 30%;
+				}
+
+				.card-text {
+					margin-right: 25px;
+					// border-top: 1px solid #999;
+					// border-left: 1px solid #999;
+					padding: 10px;
+
+					h5 {
+						font-size: 14px;
+						margin-bottom: 10px;
+					}
+
+					p {
+						font-size: 8px;
+						margin: 0;
+					}
+				}
+			}
+		}
 	}
+
 }
 
-#salon {
-	grid-area: salon;
-	background-image: url(../../images/emmen-salon.jpg);
-}
+//test
 
-#materials {
-	grid-area: materials;
-	background-image: url(../../images/materials-bakkes.jpg);
-}
-
-#blowdry {
-	grid-area: blowdry;
-	background-image: url(../../images/andre-emmen.jpg);
-}
+//test
 
 @media (hover: hover) {
 	.shop-container {
@@ -282,16 +306,16 @@ main {
 	}
 
 	.content {
-		width: $width-content-sm;
+		width: $width-content-sm-and-up;
 
-		h2, p {
+		h2, p, .treatments-container {
 			margin: 0;
 		}
 
 		.shop-container {
 
 			[class*="container"] {
-				height: height($width-content-sm);
+				height: height($width-content-sm-and-up);
 			}
 		}
 	}
@@ -329,7 +353,6 @@ main {
 	}
 
 	.content {
-		width: $width-content-md;
 
 		h2,
 		p {
@@ -340,32 +363,24 @@ main {
 			width: 49%;
 
 			[class*="container"] {
-				height: height($width-content-md / 2);
+				height: height($width-content-sm-and-up / 2);
 			}
 		}
-
-
 	}
 }
 
-
-
 //lg size
 @media only screen and (min-width: 992px) {
-	.content {
-		width: $width-content-lg;
 
-		.shop-container {
-			width: 49%;
-
-			[class*="container"] {
-				height: height($width-content-lg / 2);
-			}
-		}
-	}
 }
 
 //xl size
 @media only screen and (min-width: 1200px) {
-
+	.content {
+		.shop-container {
+			.hours {
+				font-size: 16px;
+			}
+		}
+	}
 }

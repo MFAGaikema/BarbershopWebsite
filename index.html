@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="src/css/bootstrap-sheet.css">
+		<link rel="stylesheet" href="src/css/bootstrap-sheet.css" />
 		<link rel="stylesheet" href="src/css/styles.css" />
 		<link href="https://fonts.googleapis.com/css2?family=Economica&display=swap" rel="stylesheet" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -26,10 +26,7 @@
 				>
 					<span class="navbar-toggler-icon"></span>
 				</button>
-				<div
-					class="collapse navbar-collapse"
-					id="navbarSupportedContent"
-				>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav d-flex justify-content-around w-100">
 						<li class="nav-item">
 							<a class="nav-link make-appointment" href="#afspraak-maken">Afspraak maken</a>
@@ -59,7 +56,10 @@
 			<div class="intro position-relative">
 				<header class="company-name border border-5 p-2 p-sm-4">
 					<h1 class="lh-1">BAKKES</h1>
-					<h2 class="lh-1">herenkappers en <br> baardkwekers</h2>
+					<h2 class="lh-1">
+						herenkappers en <br />
+						baardkwekers
+					</h2>
 				</header>
 			</div>
 
@@ -77,17 +77,32 @@
 
 				<section class="about" id="over-ons">
 					<h2>Over ons</h2>
-							<p>
-								BAKKES is een moderne herenkapper en barbier met vestigingen in Zwolle en Emmen. Een bezoek aan BAKKES
-								is een beleving waarin jong en oud zich laat verzorgen in een moderne, stijlvolle omgeving. Bij Bakkes
-								vind je de nieuwste trends in haarmode en baardmode en kun je je professioneel laten scheren. Ook kun je
-								bij ons genieten van heerlijke gezichtsverzorgende wellness-behandelingen.
-							</p>
-						<div class="img-container">
-							<div id="salon"></div>
-							<div id="materials"></div>
-							<div id="blowdry"></div>
+					<p>
+						BAKKES is een moderne herenkapper en barbier met vestigingen in Zwolle en Emmen. Een bezoek aan BAKKES is
+						een beleving waarin jong en oud zich laat verzorgen in een moderne, stijlvolle omgeving. Bij Bakkes vind je
+						de nieuwste trends in haarmode en baardmode en kun je je professioneel laten scheren. Ook kun je bij ons
+						genieten van heerlijke gezichtsverzorgende wellness-behandelingen.
+					</p>
+
+					<div class="carousel slide img-container" data-bs-ride="carousel">
+						<ol class="carousel-indicators">
+							<li data-bs-target="#carouselIndicators" data-bs-slide-to="0" class="active"></li>
+							<li data-bs-target="#carouselIndicators" data-bs-slide-to="1"></li>
+							<li data-bs-target="#carouselIndicators" data-bs-slide-to="2"></li>
+						</ol>
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img src="./images/emmen-salon.jpg" class="d-block w-100" alt="...">
+							</div>
+							<div class="carousel-item">
+								<img src="./images/materials-bakkes.jpg" class="d-block w-100" alt="...">
+							</div>
+							<div class="carousel-item">
+								<img src="./images/andre-emmen.jpg" class="d-block w-100" alt="...">
+							</div>
 						</div>
+					</div>
+
 				</section>
 				<!-- .about -->
 
@@ -103,10 +118,17 @@
 				</section>
 				<!-- .treatments -->
 			</div>
+			<!-- .content -->
+
+			<!--test-->
+
+				<!--test-->
 		</main>
 		<script src="shopData.js"></script>
+		<script src="treatments.js"></script>
 		<script src="script.js"></script>
-		
+
+
 		<script
 			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
 			integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
