@@ -69,6 +69,28 @@ const shops = document.querySelector('.shops');
 
 shops.innerHTML = shopInfo;
 
+//adding about-carousel
+const glide = new Glide(document.querySelector('.glide'), {
+  type: 'carousel',
+  perView: 2,
+  focusAt: 'center',
+  autoplay: 6000,
+  animationDuration: 500,
+  animationTimingFunc: "ease-in-out",
+  hoverpause: false,
+  touchRatio: 0.5,
+  breakpoints: {
+    800: {
+      perView: 3
+    },
+    480: {
+      perView: 1
+    }
+  }
+})
+
+glide.mount();
+
 //adding treatmentcards
 
 const categoryAccordion = allTreatments
