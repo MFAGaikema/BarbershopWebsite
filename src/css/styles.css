@@ -64,8 +64,8 @@ main .bg-navbar {
 
 /*intro*/
 .intro {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(25, 39, 48, 0.7)), to(rgba(38, 60, 73, 0.9))), url(../../images/3day-shave-course.jpg);
-  background: linear-gradient(rgba(25, 39, 48, 0.7), rgba(38, 60, 73, 0.9)), url(../../images/3day-shave-course.jpg);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(8, 52, 80, 0.9)), to(rgba(38, 60, 73, 0.7))), url(../../images/3day-shave-course.jpg);
+  background: linear-gradient(rgba(8, 52, 80, 0.9), rgba(38, 60, 73, 0.7)), url(../../images/3day-shave-course.jpg);
   background-size: cover;
   background-position: center;
   height: 90vh;
@@ -140,13 +140,12 @@ main .bg-navbar {
 }
 
 .content > section {
-  padding: 100px 0 10px 0;
+  padding: 100px 0 0;
   min-height: 100vh;
 }
 
 .content > section > p {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 40px 15px;
   font-size: 14px;
 }
 
@@ -168,10 +167,58 @@ main .bg-navbar {
   margin: 0 15px;
 }
 
+.content a {
+  padding: 10px 0;
+  background-color: #263c49;
+  font-weight: 200;
+  text-decoration: none;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/*parallax*/
+.parallax-appointment {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(8, 52, 80, 0.9)), to(rgba(38, 60, 73, 0.7))), url(/images/barberpole.jpg);
+  background: linear-gradient(rgba(8, 52, 80, 0.9), rgba(38, 60, 73, 0.7)), url(/images/barberpole.jpg);
+}
+
+.parallax-about {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(8, 52, 80, 0.9)), to(rgba(38, 60, 73, 0.7))), url(/images/about-parallax.jpg);
+  background: linear-gradient(rgba(8, 52, 80, 0.9), rgba(38, 60, 73, 0.7)), url(/images/about-parallax.jpg);
+}
+
+.parallax-treatments {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(8, 52, 80, 0.9)), to(rgba(38, 60, 73, 0.7))), url(/images/mes.jpg);
+  background: linear-gradient(rgba(8, 52, 80, 0.9), rgba(38, 60, 73, 0.7)), url(/images/mes.jpg);
+}
+
+.parallax-webshop {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(8, 52, 80, 0.9)), to(rgba(38, 60, 73, 0.7))), url(/images/cement-clay.jpg);
+  background: linear-gradient(rgba(8, 52, 80, 0.9), rgba(38, 60, 73, 0.7)), url(/images/cement-clay.jpg);
+}
+
+.parallax-barbertrain {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(8, 52, 80, 0.9)), to(rgba(38, 60, 73, 0.7))), url(/images/barbertrain-parallax.jpeg);
+  background: linear-gradient(rgba(8, 52, 80, 0.9), rgba(38, 60, 73, 0.7)), url(/images/barbertrain-parallax.jpeg);
+}
+
+.parallax {
+  height: 150px;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 100px -17.5vw 0;
+}
+
 /*make appointment*/
+.make-appointment .shops > div:first-child {
+  margin-bottom: 50px;
+}
+
 .make-appointment .shop-container {
   width: 100%;
-  margin-bottom: 50px;
 }
 
 .make-appointment .shop-container [class*="container"] {
@@ -186,14 +233,8 @@ main .bg-navbar {
   bottom: 50%;
   -webkit-transform: translateY(50%);
           transform: translateY(50%);
-  text-align: center;
   z-index: 1;
-  color: #fff;
   width: 100%;
-  padding: 10px 0;
-  background-color: #2e3d53;
-  font-weight: 200;
-  text-decoration: none;
 }
 
 .make-appointment .store-hours {
@@ -283,10 +324,7 @@ main .bg-navbar {
 }
 
 .treatments .treatments-container .category-container {
-  margin-bottom: 30px;
-}
-
-.treatments .treatments-container .category-container .container {
+  margin-bottom: 40px;
   padding: 0;
 }
 
@@ -296,22 +334,18 @@ main .bg-navbar {
 
 .treatments .treatments-container .treatment-list .treatment-card {
   list-style-type: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin: 5px 0;
-}
-
-.treatments .treatments-container .treatment-list .treatment-card img {
-  width: 30%;
+  margin: 15px 0;
 }
 
 .treatments .treatments-container .treatment-list .treatment-card .card-text {
-  margin-right: 25px;
-  padding: 10px;
+  margin-right: 15px;
+  margin-left: 10px;
+}
+
+.treatments .treatments-container .treatment-list .treatment-card .card-text img {
+  float: right;
+  margin-left: 10px;
+  width: 35%;
 }
 
 .treatments .treatments-container .treatment-list .treatment-card .card-text h5 {
@@ -324,13 +358,37 @@ main .bg-navbar {
   margin: 0;
 }
 
+/*webshop and barbertrain*/
+.main-container {
+  margin: 40px 0;
+}
+
+.main-container img {
+  width: 100%;
+}
+
+.text-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.text-container a {
+  padding: 10px 20px;
+  margin: 40px auto;
+}
+
 @media (hover: hover) {
+  .content a:hover {
+    text-decoration: underline;
+  }
   .shop-container [class*="container"]:hover {
     background-size: cover;
     background-repeat: no-repeat;
-  }
-  .shop-container [class*="container"] a:hover {
-    text-decoration: underline;
   }
   .emmen-bg-container:hover {
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(25, 39, 48, 0.9)), to(rgba(38, 60, 73, 0.8))), url(../../images/emmen-front.jpg);
@@ -352,11 +410,19 @@ main .bg-navbar {
   .content {
     width: 70vw;
   }
+  .content > section > p {
+    margin-left: 0;
+    margin-right: 0;
+  }
   .content h2, .content p, .content .treatments-container {
-    margin: 0;
+    margin-left: 0;
+    margin-right: 0;
   }
   .content .shop-container [class*="container"] {
     height: 43.75vw;
+  }
+  .parallax {
+    height: 200px;
   }
 }
 
@@ -391,11 +457,20 @@ main .bg-navbar {
 }
 
 @media only screen and (min-width: 992px) {
+  .make-appointment .shops > div:first-child {
+    margin-bottom: 0px;
+  }
   .content .shop-container {
     width: 49%;
   }
   .content .shop-container [class*="container"] {
     height: 21.875vw;
+  }
+  .main-container img {
+    width: 50%;
+  }
+  .main-container a {
+    margin: auto;
   }
 }
 

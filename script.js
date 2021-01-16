@@ -33,6 +33,9 @@ const switchNavBtns = (name) => {
 switchNavBtns('.make-appointment');
 switchNavBtns('.about');
 switchNavBtns('.treatments');
+switchNavBtns('.webshop');
+// switchNavBtns('.barbertrain');
+// switchNavBtns('.contact');
 
 //adding shopinfo
 const storeHours = (times) => {
@@ -81,9 +84,6 @@ const glide = new Glide(document.querySelector('.glide'), {
   touchRatio: 0.5,
   breakpoints: {
     800: {
-      perView: 3
-    },
-    480: {
       perView: 1
     }
   }
@@ -97,24 +97,23 @@ const categoryAccordion = allTreatments
 	.map((treatment) => {
 		const { category, treatments } = treatment;
 		return `
-			<div class="category-container">
-				<div class="${category.toLowerCase()}-container container">
+				<div class="category-container">
 					<h3>${category.toUpperCase()}</h3>
 					<ul class="treatment-list row">${treatments.map(treatment => {
 						const {name, description, picUrl} = treatment;
 						return `		
-						<li class="treatment-card col-md-6">
+						<li class="treatment-card col-lg-6">
 							<div class="card-text">
+								<img src="../../images/Behandelingen/${picUrl}"/>
 								<h5>${name}</h5>
 								<p>${description}</p>
 							</div>
-							<img src="../../images/Behandelingen/${picUrl}"/>
+							
 						</li>
 					`
 					}).join("")}
 					</ul>
 				</div>
-			</div>
 			`;
 	})
 	.join('');
@@ -125,7 +124,7 @@ treatmentsContainer.innerHTML = categoryAccordion;
 
 //change font-size based on width container
 const shopContainer = document.querySelector('.shop-container');
-const linkBtn = Array.from(document.querySelectorAll('.shops a'));
+const linkBtn = Array.from(document.querySelectorAll('.content a'));
 const hours = Array.from(document.querySelectorAll('.hours'));
 const descriptionTreatment = Array.from(document.querySelectorAll('.card-text p'));
 
