@@ -4,6 +4,7 @@ $width-content-sm-and-up: 70vw;
 $blue-filter: linear-gradient(rgba($color: #083450, $alpha: 0.9), rgba($color: #263c49, $alpha: 0.7));
 $margin-for-100vw: -$width-content-sm-and-up/4; 
 $main-blue-color: #263c49;
+$main-text-color: #222;
 
 /*functions*/
 @function height($width) {
@@ -127,7 +128,7 @@ main {
 	}
 }
 
-/*markup content*/
+/*general markup content*/
 .content {
 	margin: auto;
 	width: $width-content-xs;
@@ -137,16 +138,16 @@ main {
 		min-height: 100vh;
 
 		& > p {
-			margin: 40px 15px;
+			margin: 0 15px 40px;
 			font-size: 14px;
 		}
 	}
 
 	h2 {
-		color: #222;
+		color: $main-text-color;
 		text-transform: uppercase;
 		position: relative;
-		margin-bottom: 20px;
+		margin-bottom: 40px;
 		text-align: left;
 	}
 
@@ -157,18 +158,31 @@ main {
 	h2,
 	p,
 	.treatments-container {
-		margin: 0 15px;
+		margin-left: 15px;
+		margin-right: 15px;
 	}
+}
 
-	a {
-		padding: 10px 0;
-		background-color: $main-blue-color;
-		font-weight: 200;
-		text-decoration: none;
-		color: #fff;
-		text-align: center;
-		text-transform: uppercase;
-	}
+.btn, .submit-btn {
+	padding: 10px 20px;
+	background-color: $main-blue-color;
+	font-weight: 200;
+	text-decoration: none;
+	color: #fff;
+	text-align: center;
+	text-transform: uppercase;
+	outline: none;
+	border: none;
+}
+
+.submit-btn {
+	font-weight: 400;
+}
+
+.modal-btn {
+	background-color: transparent;
+	border: none;
+	outline: none;
 }
 
 /*parallax*/
@@ -204,6 +218,13 @@ main {
 
 /*make appointment*/
 .make-appointment {
+
+	.modal-btn-appointment {
+		outline: none;
+		border: none;
+		text-decoration: underline;
+	}
+
 	.shops > div:first-child {
 		margin-bottom: 50px;
 	}
@@ -296,15 +317,6 @@ main {
   }
 }
 
-@media (hover: none) {
-  .glide__arrows {
-    button {
-      display: none;
-    }
-  }
-
-}
-
 /*treatments*/
 .treatments {
 
@@ -350,14 +362,13 @@ main {
 
 /*webshop and barbertrain*/
 
-	.main-container {
-		margin: 40px 0;
+.main-container {
+	margin: 40px 0;
 
-		img {
-			width: 100%;
-		}
+	img {
+		width: 100%;
 	}
-
+}
 
 .text-container {
 	display: flex;
@@ -369,11 +380,214 @@ main {
 	}
 }
 
+/*contact*/
+
+.contact-container {
+	margin-top: 40px;
+}
+
+.contact-form-container {
+
+	.title {
+		margin-bottom: 0;
+	}
+
+	form {
+		margin-bottom: 40px;
+
+		.form-group {
+			position: relative;
+			margin: 0 15px;
+
+			input::placeholder, textarea::placeholder {
+				color: #777;
+				transition: color 0.1s;		
+				transition-delay: 0.1s;
+			}
+
+			input:focus::placeholder, textarea:focus::placeholder {
+					color: transparent;	
+			}
+
+			span {
+				position: absolute;
+				left: 20px;
+				top: 10px;
+				font-size: 14px;
+				background-color: white;
+				padding: 0 5px;
+				z-index: 2000;
+				opacity: 0;
+				transition: 0.1s;
+			}
+		}
+	
+		.input {
+			width: 100%;
+			margin: 20px 0;
+			border: 2px solid $main-blue-color;
+			padding: 10px 20px;
+			outline: none;
+			z-index: 1000;
+		}
+	
+		.textarea {
+
+			textarea {
+				resize: none;
+				overflow-y: auto;
+				height: 100px;
+			}
+		}
+		.submit-btn {
+			margin: auto;
+		}
+	}
+}
+
+.contact-shop-container {
+	margin-top: 40px;
+
+	.contact-info {
+		margin: 10px 15px 20px 15px;
+
+		a {
+			text-decoration: none;
+			color: black;
+		}
+
+		.social-media {
+			margin-bottom: 0;
+			display: flex;
+
+			a {
+				display: flex;
+				flex-direction: column;
+			}
+
+			i {
+				color: #000;
+				font-size: 24px;
+				margin-left: 15px;
+				transition: color 0.2s;
+			}
+		}
+	}
+	.map-info-container {
+		iframe {
+			width: 100%;
+			height: 50vw;
+		}
+	}
+}
+
+/*footer*/
+footer {
+	background-color: black;
+	padding: 10px 0;
+	font-size: 10px;
+	ul {
+		padding: 0;
+
+		li {
+			list-style-type: none;
+			color: white;
+			
+
+			p {
+				margin: auto;
+			}
+
+			.modal-btn {
+				color: white;
+				outline: none;
+				border: none;
+			}
+		}
+
+		.footer-group {
+			width: 100vw;
+		}
+	}
+}
+
+/*modal*/
+body, nav {
+  padding-right: 0px !important
+}
+
+.contact-modal {
+	.modal, #backdrop {
+		display: none;
+		opacity: 0;
+		transition: opacity 0.3s;
+	}
+	
+	.modal-open {
+		overflow-y: auto;
+	}
+}
+
+.modal-content {
+	padding: 5px;
+	border-radius: 0;
+	border: 2px solid $main-blue-color;
+}
+
+.main-modal {
+	.modal-header {
+		padding-left: 21px;
+	}
+
+	.modal-body {
+		text-align: start;
+	}
+}
+
+.modal-body {
+	padding: 20px;
+	border: 2px solid $main-blue-color;
+	text-align: center;
+
+	h4 {
+		margin-bottom: 5px;
+		font-size: 20px;
+	}
+
+	h4:not(.first-title-top) {
+		margin-top: 24px;
+	}
+
+	p {
+		//margin-bottom: 24px;
+		font-size: 12px;
+	}
+
+	p:last-of-type {
+		margin-bottom: 0;
+	}
+}
+
 @media (hover: hover) {
 	.content {
-		a:hover {
+		a:hover, .submit-btn:hover {
 			text-decoration: underline;
+			color: white;
 		}
+
+		.social-media {
+			i:hover {
+				color: lighten($main-blue-color, 10%);
+			}
+
+			a:hover {
+				text-decoration: none;
+			}
+		}
+	}
+
+	.modal-btn:hover {
+		text-decoration: underline;
 	}
 
 	.shop-container {
@@ -400,6 +614,14 @@ main {
 	}
 }
 
+@media (hover: none) {
+  .glide__arrows {
+    button {
+      display: none;
+    }
+  }
+}
+
 //sm size
 @media only screen and (min-width: 576px) {
 	.intro {
@@ -419,7 +641,7 @@ main {
 			margin-right: 0;
 		}
 
-		h2, p, .treatments-container {
+		h2, p, .treatments-container, .social-media {
 			margin-left: 0;
 			margin-right: 0;
 		}
@@ -434,6 +656,25 @@ main {
 
 	.parallax {
 		height: 200px;
+	}
+
+	.contact-form-container {
+		form {
+			.form-group {
+				margin: 0;
+			}
+		}
+	}
+
+	.contact-shop-container {
+		.map-info-container {
+			iframe {
+				height: 30vw;
+			}
+		}
+		.contact-info {
+			margin: 10px 0 20px 0;
+		}
 	}
 }
 
@@ -478,6 +719,9 @@ main {
 	}
 
 	.content {
+		& > section {
+			min-height: 50vh;
+		}
 
 		.shop-container {
 			width: 49%;
@@ -486,16 +730,39 @@ main {
 				height: height($width-content-sm-and-up / 2);
 			}
 		}
+
+		.contact-form-container {
+			width: 47%;
+		}
+
+		.contact-shop-container {
+			width: 47%;
+			margin-top: 0;
+
+			iframe {
+				width: 100%;
+				height: ($width-content-sm-and-up / 4)
+			}
+		}
 	}
 
 	.main-container {
+		.text-container {
+			padding-right: 20px;
+		}
+
 		img {
-			width: 50%;
+			width: 60%;
 		}
 
 		a {
 			margin: auto;
 		}
+	}
+
+	footer {
+		font-size: 14px;
+		padding: 20px 0;
 	}
 }
 
@@ -507,5 +774,21 @@ main {
 				font-size: 16px;
 			}
 		}
+
+		.map-info-container {
+			iframe {
+				height: 12vw;
+			}
+			
+			.contact-info {
+				p {
+					margin-bottom: 5px;
+				}
+			}
+		}
+	}
+
+	footer {
+		font-size: 12px;
 	}
 }

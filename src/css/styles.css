@@ -133,7 +133,7 @@ main .bg-navbar {
   }
 }
 
-/*markup content*/
+/*general markup content*/
 .content {
   margin: auto;
   width: 100vw;
@@ -145,7 +145,7 @@ main .bg-navbar {
 }
 
 .content > section > p {
-  margin: 40px 15px;
+  margin: 0 15px 40px;
   font-size: 14px;
 }
 
@@ -153,7 +153,7 @@ main .bg-navbar {
   color: #222;
   text-transform: uppercase;
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   text-align: left;
 }
 
@@ -164,17 +164,30 @@ main .bg-navbar {
 .content h2,
 .content p,
 .content .treatments-container {
-  margin: 0 15px;
+  margin-left: 15px;
+  margin-right: 15px;
 }
 
-.content a {
-  padding: 10px 0;
+.btn, .submit-btn {
+  padding: 10px 20px;
   background-color: #263c49;
   font-weight: 200;
   text-decoration: none;
   color: #fff;
   text-align: center;
   text-transform: uppercase;
+  outline: none;
+  border: none;
+}
+
+.submit-btn {
+  font-weight: 400;
+}
+
+.modal-btn {
+  background-color: transparent;
+  border: none;
+  outline: none;
 }
 
 /*parallax*/
@@ -213,6 +226,12 @@ main .bg-navbar {
 }
 
 /*make appointment*/
+.make-appointment .modal-btn-appointment {
+  outline: none;
+  border: none;
+  text-decoration: underline;
+}
+
 .make-appointment .shops > div:first-child {
   margin-bottom: 50px;
 }
@@ -312,12 +331,6 @@ main .bg-navbar {
   opacity: 0.5;
 }
 
-@media (hover: none) {
-  .glide__arrows button {
-    display: none;
-  }
-}
-
 /*treatments*/
 .treatments .treatments-container {
   margin-top: 50px;
@@ -382,8 +395,240 @@ main .bg-navbar {
   margin: 40px auto;
 }
 
+/*contact*/
+.contact-container {
+  margin-top: 40px;
+}
+
+.contact-form-container .title {
+  margin-bottom: 0;
+}
+
+.contact-form-container form {
+  margin-bottom: 40px;
+}
+
+.contact-form-container form .form-group {
+  position: relative;
+  margin: 0 15px;
+}
+
+.contact-form-container form .form-group input::-webkit-input-placeholder, .contact-form-container form .form-group textarea::-webkit-input-placeholder {
+  color: #777;
+  -webkit-transition: color 0.1s;
+  transition: color 0.1s;
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
+}
+
+.contact-form-container form .form-group input:-ms-input-placeholder, .contact-form-container form .form-group textarea:-ms-input-placeholder {
+  color: #777;
+  -webkit-transition: color 0.1s;
+  transition: color 0.1s;
+  transition-delay: 0.1s;
+}
+
+.contact-form-container form .form-group input::-ms-input-placeholder, .contact-form-container form .form-group textarea::-ms-input-placeholder {
+  color: #777;
+  -webkit-transition: color 0.1s;
+  transition: color 0.1s;
+  transition-delay: 0.1s;
+}
+
+.contact-form-container form .form-group input::placeholder, .contact-form-container form .form-group textarea::placeholder {
+  color: #777;
+  -webkit-transition: color 0.1s;
+  transition: color 0.1s;
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
+}
+
+.contact-form-container form .form-group input:focus::-webkit-input-placeholder, .contact-form-container form .form-group textarea:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.contact-form-container form .form-group input:focus:-ms-input-placeholder, .contact-form-container form .form-group textarea:focus:-ms-input-placeholder {
+  color: transparent;
+}
+
+.contact-form-container form .form-group input:focus::-ms-input-placeholder, .contact-form-container form .form-group textarea:focus::-ms-input-placeholder {
+  color: transparent;
+}
+
+.contact-form-container form .form-group input:focus::placeholder, .contact-form-container form .form-group textarea:focus::placeholder {
+  color: transparent;
+}
+
+.contact-form-container form .form-group span {
+  position: absolute;
+  left: 20px;
+  top: 10px;
+  font-size: 14px;
+  background-color: white;
+  padding: 0 5px;
+  z-index: 2000;
+  opacity: 0;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+}
+
+.contact-form-container form .input {
+  width: 100%;
+  margin: 20px 0;
+  border: 2px solid #263c49;
+  padding: 10px 20px;
+  outline: none;
+  z-index: 1000;
+}
+
+.contact-form-container form .textarea textarea {
+  resize: none;
+  overflow-y: auto;
+  height: 100px;
+}
+
+.contact-form-container form .submit-btn {
+  margin: auto;
+}
+
+.contact-shop-container {
+  margin-top: 40px;
+}
+
+.contact-shop-container .contact-info {
+  margin: 10px 15px 20px 15px;
+}
+
+.contact-shop-container .contact-info a {
+  text-decoration: none;
+  color: black;
+}
+
+.contact-shop-container .contact-info .social-media {
+  margin-bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.contact-shop-container .contact-info .social-media a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.contact-shop-container .contact-info .social-media i {
+  color: #000;
+  font-size: 24px;
+  margin-left: 15px;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+}
+
+.contact-shop-container .map-info-container iframe {
+  width: 100%;
+  height: 50vw;
+}
+
+/*footer*/
+footer {
+  background-color: black;
+  padding: 10px 0;
+  font-size: 10px;
+}
+
+footer ul {
+  padding: 0;
+}
+
+footer ul li {
+  list-style-type: none;
+  color: white;
+}
+
+footer ul li p {
+  margin: auto;
+}
+
+footer ul li .modal-btn {
+  color: white;
+  outline: none;
+  border: none;
+}
+
+footer ul .footer-group {
+  width: 100vw;
+}
+
+/*modal*/
+body, nav {
+  padding-right: 0px !important;
+}
+
+.contact-modal .modal, .contact-modal #backdrop {
+  display: none;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.contact-modal .modal-open {
+  overflow-y: auto;
+}
+
+.modal-content {
+  padding: 5px;
+  border-radius: 0;
+  border: 2px solid #263c49;
+}
+
+.main-modal .modal-header {
+  padding-left: 21px;
+}
+
+.main-modal .modal-body {
+  text-align: start;
+}
+
+.modal-body {
+  padding: 20px;
+  border: 2px solid #263c49;
+  text-align: center;
+}
+
+.modal-body h4 {
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+
+.modal-body h4:not(.first-title-top) {
+  margin-top: 24px;
+}
+
+.modal-body p {
+  font-size: 12px;
+}
+
+.modal-body p:last-of-type {
+  margin-bottom: 0;
+}
+
 @media (hover: hover) {
-  .content a:hover {
+  .content a:hover, .content .submit-btn:hover {
+    text-decoration: underline;
+    color: white;
+  }
+  .content .social-media i:hover {
+    color: #37586b;
+  }
+  .content .social-media a:hover {
+    text-decoration: none;
+  }
+  .modal-btn:hover {
     text-decoration: underline;
   }
   .shop-container [class*="container"]:hover {
@@ -397,6 +642,12 @@ main .bg-navbar {
   .zwolle-bg-container:hover {
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(25, 39, 48, 0.9)), to(rgba(38, 60, 73, 0.8))), url(../../images/Stellar-Bakkes-13.jpg);
     background: linear-gradient(rgba(25, 39, 48, 0.9), rgba(38, 60, 73, 0.8)), url(../../images/Stellar-Bakkes-13.jpg);
+  }
+}
+
+@media (hover: none) {
+  .glide__arrows button {
+    display: none;
   }
 }
 
@@ -414,7 +665,7 @@ main .bg-navbar {
     margin-left: 0;
     margin-right: 0;
   }
-  .content h2, .content p, .content .treatments-container {
+  .content h2, .content p, .content .treatments-container, .content .social-media {
     margin-left: 0;
     margin-right: 0;
   }
@@ -423,6 +674,15 @@ main .bg-navbar {
   }
   .parallax {
     height: 200px;
+  }
+  .contact-form-container form .form-group {
+    margin: 0;
+  }
+  .contact-shop-container .map-info-container iframe {
+    height: 30vw;
+  }
+  .contact-shop-container .contact-info {
+    margin: 10px 0 20px 0;
   }
 }
 
@@ -460,23 +720,53 @@ main .bg-navbar {
   .make-appointment .shops > div:first-child {
     margin-bottom: 0px;
   }
+  .content > section {
+    min-height: 50vh;
+  }
   .content .shop-container {
     width: 49%;
   }
   .content .shop-container [class*="container"] {
     height: 21.875vw;
   }
+  .content .contact-form-container {
+    width: 47%;
+  }
+  .content .contact-shop-container {
+    width: 47%;
+    margin-top: 0;
+  }
+  .content .contact-shop-container iframe {
+    width: 100%;
+    height: 17.5vw;
+  }
+  .main-container .text-container {
+    padding-right: 20px;
+  }
   .main-container img {
-    width: 50%;
+    width: 60%;
   }
   .main-container a {
     margin: auto;
+  }
+  footer {
+    font-size: 14px;
+    padding: 20px 0;
   }
 }
 
 @media only screen and (min-width: 1200px) {
   .content .shop-container .hours {
     font-size: 16px;
+  }
+  .content .map-info-container iframe {
+    height: 12vw;
+  }
+  .content .map-info-container .contact-info p {
+    margin-bottom: 5px;
+  }
+  footer {
+    font-size: 12px;
   }
 }
 /*# sourceMappingURL=styles.css.map */

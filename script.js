@@ -34,8 +34,8 @@ switchNavBtns('.make-appointment');
 switchNavBtns('.about');
 switchNavBtns('.treatments');
 switchNavBtns('.webshop');
-// switchNavBtns('.barbertrain');
-// switchNavBtns('.contact');
+switchNavBtns('.barbertrain');
+switchNavBtns('.contact');
 
 //adding shopinfo
 const storeHours = (times) => {
@@ -59,7 +59,7 @@ const shopInfo = shopsBakkes
 		return `
 			<div class="shop-container">
 				<div class="${place.toLowerCase()}-bg-container">
-					<a href="#">Afspraak ${place} maken</a>
+					<a class="submit-btn" href="#">Afspraak ${place} maken</a>
 				</div>
 				<div class="store-hours">${storeHours(hours)}
 				</div>
@@ -124,7 +124,7 @@ treatmentsContainer.innerHTML = categoryAccordion;
 
 //change font-size based on width container
 const shopContainer = document.querySelector('.shop-container');
-const linkBtn = Array.from(document.querySelectorAll('.content a'));
+const linkBtn = Array.from(document.querySelectorAll('.content .btn'));
 const hours = Array.from(document.querySelectorAll('.hours'));
 const descriptionTreatment = Array.from(document.querySelectorAll('.card-text p'));
 
@@ -136,3 +136,138 @@ const changeFontSize = () => {
 changeFontSize();
 
 new ResizeObserver(changeFontSize).observe(shopContainer);
+
+// put placeholder/label on top input contact-form
+const span = document.querySelectorAll("form span");
+const input = document.querySelectorAll("form .input");
+
+const translateLabel = (e) => {
+	span.forEach(span => {
+		if(span.id === e.target.id) {
+			span.style.opacity = "1";
+		} else {
+			span.style.opacity = "0";
+		}
+	})
+}
+
+input.forEach(input => input.addEventListener("focus", translateLabel));
+window.addEventListener("click", translateLabel);
+
+//adding map info container to contact shop container
+
+const contactShopContainer = document.querySelector(".contact-shop-container");
+
+const mapInfo = shopsBakkes.map(shop => {
+	const {street, zipcode, place} = shop.address;
+	return `
+	<div class="map-info-container">
+		<iframe
+			src="https://www.google.com/maps/embed?pb=${shop.mapUrl}"
+		></iframe>
+		<div class="contact-info">
+			<h3>BAKKES ${place}</h3>
+			<p><i class="fas fa-home"></i> ${street} ${zipcode} ${place}</p>
+			<p><i class="fas fa-phone-alt"></i> ${shop.phone}</p>
+			<p><i class="fas fa-at"></i> <a href="mailto:${shop.email}">${shop.email}</a></p>
+			<p class="social-media">Volg ons op:
+				<a href="#"><i class="fab fa-facebook-square"></i></a>
+				<a href="#"><i class="fa fa-instagram"></i></a>
+			</p>
+		</div>
+	</div>
+	`
+})
+.join("")
+
+contactShopContainer.innerHTML = mapInfo;
+
+//validate forms
+const forms = document.querySelectorAll(".needs-validation");
+const submitBtns = document.querySelectorAll("form .submit-btn");
+const feedback = document.querySelectorAll(".invalid-feedback");
+const modal = document.querySelector(".modal");
+const backdrop = document.getElementById("backdrop");
+const modalBody = document.querySelector(".modal-body");
+
+submitBtns.forEach(btn => btn.addEventListener("click", (e) => {
+	modalBody.innerText = e.target.id === "msg-submit" ? 
+		"Bedankt voor je bericht, we zullen zo snel mogelijk contact met je opnemen!" :
+		"Bedankt voor je aanmelding!"
+}))
+
+const showModal = () => {
+	modal.classList.add("show");
+	modal.style.display = "block";
+	backdrop.style.display = "block";
+	
+	setTimeout(() => {
+		modal.style.opacity = "1";
+		backdrop.style.opacity = "0.5";
+	}, 0);
+}
+
+const hideModal = () => {
+		modal.style.opacity = "0";
+		backdrop.style.opacity = "0";
+
+	setTimeout(() => {
+		modal.classList.remove("show");
+		modal.style.display = "none";
+		backdrop.style.display = "none";
+	}, 300);
+}
+
+forms.forEach(form => form.addEventListener("submit", (e) => {
+	if(!form.checkValidity()) {
+		e.preventDefault();
+		e.stopPropagation();		
+	} else {
+		e.preventDefault();
+		form.reset();
+		feedback.forEach(feedback => feedback.innerHTML = "");
+		showModal();
+		setTimeout(() => {
+			hideModal();
+		}, 3000);
+	}
+	form.classList.add("was-validated");
+}))
+
+window.addEventListener("click", (e) => {
+	if (e.target == modal) {
+		hideModal();
+	}
+}) 
+
+//adding info to modals
+const mainModal = document.querySelector(".main-modal");
+const modalContainer = document.querySelector(".modal-container")
+const modalBtns = Array.from(document.querySelectorAll(".modal-btn"));
+
+const modals = modalBtns.map(btn => {
+	return `		
+		<div class="modal fade main-modal" id="${btn.name}" tabindex="-1" aria-labelledby="mainModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h3 class="modal-title" id="mainModalLabel"><b>${btn.value}</b></h3>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body"></div>
+					<div class="modal-footer">
+						<button type="button" class="submit-btn" data-bs-dismiss="modal">Sluiten</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	`
+}).join("");
+
+modalContainer.innerHTML = modals;
+
+modalBtns.forEach(btn => btn.addEventListener("click", (e) => {
+	const mainModalBodies = Array.from(document.querySelectorAll(".main-modal .modal-body"));
+	const subjectObj = modalContent.find(content => content.subject === e.target.name);
+	mainModalBodies.forEach(body => body.innerHTML = subjectObj.content);
+}))
