@@ -69,10 +69,6 @@ main .bg-navbar {
   background-size: cover;
   background-position: center;
   height: 90vh;
-  text-align: center;
-  color: white;
-  text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
-  letter-spacing: 4px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -92,19 +88,10 @@ main .bg-navbar {
   opacity: 0;
 }
 
-.intro h1 {
-  font-size: 100px;
-}
-
-.intro h2 {
-  margin-top: -20px;
-  font-size: 30px;
-}
-
-.intro h1,
-.intro h2 {
-  font-family: 'Economica', sans-serif;
-  font-weight: 100;
+.intro .company-name img {
+  max-width: 90vw;
+  margin: auto;
+  padding-bottom: 50px;
 }
 
 @-webkit-keyframes fade-names {
@@ -574,6 +561,10 @@ body, nav {
   opacity: 0;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
+}
+
+.contact-modal .modal-body {
+  border: none;
 }
 
 .contact-modal .modal-open {

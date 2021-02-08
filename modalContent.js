@@ -347,8 +347,6 @@ BTW-nummer: NL855765094B01 <br>
 	{
 		subject: 'afspraak',
 		content: `
-    <h4 class="first-title-top">Wijzigen of annuleren afspraak</h4>
-
     <p><b>Tot 24 uur vantevoren online</b></p>
     <p>
     Zelf online je afspraak wijzigen of annuleren kan tot 24 uur van tevoren. Zie hiervoor de instructie in de afspraakbevestiging die wij per e-mail hebben toegestuurd.

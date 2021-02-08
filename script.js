@@ -1,8 +1,3 @@
-//smooth scroll
-// const scroll = new SmoothScroll('a[href*="#"]', {
-// 	speed: 200,
-// });
-
 //navbar collapse on click navbar-item
 const navItems = Array.from(document.getElementsByClassName('nav-item'));
 const navbarSupportedContent = document.getElementById('navbarSupportedContent');
@@ -229,7 +224,7 @@ forms.forEach(form => form.addEventListener("submit", (e) => {
 		showModal();
 		setTimeout(() => {
 			hideModal();
-		}, 3000);
+		}, 4000);
 	}
 	form.classList.add("was-validated");
 }))

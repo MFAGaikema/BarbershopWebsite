@@ -86,11 +86,6 @@ main {
 	background-size: cover;
 	background-position: center;
 	height: 90vh;
-	text-align: center;
-	color: white;
-	text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black,
-		1px -1px 0 black, -1px 1px 0 black;
-	letter-spacing: 4px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -99,21 +94,13 @@ main {
 		animation: fade-names 1s linear forwards;
 		animation-delay: 0.5s;
 		opacity: 0;
-	}
 
-	h1 {
-		font-size: 100px;
-	}
+		img {
+			max-width: 90vw;
+			margin: auto;
+			padding-bottom: 50px;
+		}
 
-	h2 {
-		margin-top: -20px;
-		font-size: 30px;
-	}
-
-	h1,
-	h2 {
-		font-family: 'Economica', sans-serif;
-		font-weight: 100;
 	}
 
 	@keyframes fade-names {
@@ -521,6 +508,10 @@ body, nav {
 		display: none;
 		opacity: 0;
 		transition: opacity 0.3s;
+	}
+
+	.modal-body {
+		border: none;
 	}
 	
 	.modal-open {
